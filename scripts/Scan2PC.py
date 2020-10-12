@@ -35,32 +35,6 @@ def calc_axis_xy(_theta, _distance, _min_range, _max_range):
     else:
         return (0, 0)
 
-def calc_distance_two_points(_p1, _p2):
-    temp1 = _p2[0] - _p1[0]
-    temp2 = _p2[1] - _p1[1]
-
-    _d = abs(np.sqrt(float(temp1 * temp1) + float(temp2 * temp2)))
-    
-    return _d
-
-
-def calc_cluster(_pcl, maxDistance = 0.2, relatedObject = 5):
-    flag = 0
-    _object = 0
-    object_array = []
-    temp = []
-    for i in range(1, len(_pcl)-1):
-        d = calc_distance_two_points(_pcl[i-1], _pcl[i])
-        if d > 0.0001 and d < maxDistance:
-            flag += 1
-        else:
-            if flag > relatedObject:
-                _object += 1
-            flag = 0
-
-    return _object
-
-
 def run():
     rospy.init_node('scan_py_receiver', anonymous=True)
     lc = rpScanRecever()
