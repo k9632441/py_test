@@ -1,0 +1,3 @@
+<launch>
+	<node pkg="py_test" type="recvFromPy.py" name="result_img" output="screen"/>
+</launch>

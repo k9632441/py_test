@@ -1,0 +1,3 @@
+<launch>
+	<node pkg="py_test" type="rplidarScanRecv.py" name="recv_scan" output="screen"/>
+</launch>
